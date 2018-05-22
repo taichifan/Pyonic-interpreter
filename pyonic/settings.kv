@@ -4,6 +4,7 @@
     container: container
 
     setting__throttle_output: throttle_output.active
+    setting__show_hidden: show_hidden.active
     setting__show_input_buttons: show_input_buttons.active
     setting__text_input_height: text_input_height.value
     setting__rotation: rotation.value
@@ -105,6 +106,16 @@
                     description: 'Limit rate of output printing. If disabled, the app will not be responsive when printing large volumes of text.'
                     input_column_width_setter: text_input_height.input_column_width
                     active: root.setting__throttle_output
+                SettingsTitle:
+                    text: 'FileChooser'
+                    font_size: dp(16)
+                Spacer:
+                BooleanSetting:
+                    id: show_hidden
+                    name: 'Show Hidden'
+                    description: 'Show hidden files.'
+                    input_column_width_setter: text_input_height.input_column_width
+                    active: root.setting__show_hidden
                 SettingsTitle:
                     text: 'APP'
                     font_size: dp(16)

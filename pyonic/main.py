@@ -111,6 +111,8 @@ class PyonicApp(App):
     setting__throttle_output_default = True
     setting__show_input_buttons = BooleanProperty()
     setting__show_input_buttons_default = True
+    setting__show_hidden = BooleanProperty()
+    setting__show_hidden_default = False
     setting__autocompletion = BooleanProperty()
     setting__autocompletion_default = True
     setting__autocompletion_brackets = BooleanProperty()
@@ -122,6 +124,9 @@ class PyonicApp(App):
 
     def on_setting__autocompletion(self, instance, value):
         print('app autocompletion', value)
+    
+    def on_setting__show_hidden(self, instance, value):
+        print('filechooser show hidden', value)
     
     def build(self):
         self.settings_retrieved = False  # used to prevent setting

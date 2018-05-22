@@ -450,6 +450,9 @@ class InterpreterGui(BoxLayout):
             success_screen_name='interpreter',
             purpose='exec file')
 
+    def quit_pgm(self):
+        quit()
+
     def _exec_file(self, filename):
         self.add_user_message_label('Executing {}...'.format(filename))
         self.ensure_ctrl_c_button()

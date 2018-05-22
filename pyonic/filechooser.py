@@ -82,6 +82,13 @@ class FileView(RecycleView):
     def on_folder(self, instance, value):
         filens = os.listdir(self.folder)
         filens.append('..')
+        from kivy.app import App
+        if not App.get_running_app().setting__show_hidden:
+            nfilens = []
+            for fn in filens:
+                if fn.find('.') != 0:
+                    nfilens.append(fn)
+        filens = nfilens
 
         file_types = ['folder' if isdir(join(self.folder, filen)) else 'file' for filen in filens]
 
